@@ -207,11 +207,11 @@ const Modal = ({ isOpen, onClose, children }) => {
 // 4. Hero Section (LinkedIn Style Profile)
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-16 pb-12 px-4 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-8 md:pt-16 pb-24 md:pb-12 px-4 overflow-hidden">
       {/* Background mesh */}
       <div className="absolute inset-0 z-0 opacity-20 dark:opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-neon/40 via-transparent to-transparent blur-3xl"></div>
 
-      <div className="z-10 w-full max-w-[95%] lg:max-w-7xl mt-12 md:mt-0">
+      <div className="z-10 w-full max-w-[95%] lg:max-w-7xl">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

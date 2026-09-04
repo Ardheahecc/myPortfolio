@@ -149,16 +149,16 @@ const MagneticCursor = () => {
 const HUDNavigation = ({ darkMode, setDarkMode }) => {
   return (
     <motion.nav
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, type: 'spring' }}
-      className="fixed bottom-6 right-6 z-50 glass rounded-2xl p-3 flex flex-col items-center gap-4 shadow-2xl"
+      className="fixed bottom-4 left-0 right-0 mx-auto md:left-auto md:bottom-6 md:right-6 md:mx-0 z-50 glass rounded-full md:rounded-2xl px-2 py-3 md:p-3 flex flex-row md:flex-col items-center justify-evenly md:justify-start gap-1 md:gap-4 shadow-2xl w-[92%] sm:w-[380px] md:w-auto"
     >
       <a href="#home" className="p-2 hover:text-brand-neon hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" title="Beranda"><Home className="w-5 h-5" /></a>
       <a href="#about" className="p-2 hover:text-brand-neon hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" title="Profil"><User className="w-5 h-5" /></a>
       <a href="#education" className="p-2 hover:text-brand-neon hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" title="Pendidikan & Magang"><GraduationCap className="w-5 h-5" /></a>
       <a href="#projects" className="p-2 hover:text-brand-neon hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all" title="Portofolio"><Code className="w-5 h-5" /></a>
-      <div className="w-6 h-px bg-slate-300 dark:bg-slate-700"></div>
+      <div className="w-px h-6 md:w-6 md:h-px bg-slate-300 dark:bg-slate-700"></div>
       <button
         onClick={() => setDarkMode(!darkMode)}
         className="p-2 hover:text-brand-neon hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all"
@@ -220,7 +220,7 @@ const Hero = () => {
         >
           {/* Banner */}
           <div className="h-40 md:h-56 relative overflow-hidden bg-slate-200 dark:bg-slate-800">
-            <img src="/fotoSampul.png" alt="Sampul" className="w-full h-full object-cover" />
+            <img src="/fotoSampul.png" alt="Sampul" className="w-full h-full object-cover object-[75%_center] md:object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
@@ -237,19 +237,23 @@ const Hero = () => {
 
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6">
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-1 text-slate-900 dark:text-white">Muhammad Riski Ardhea</h1>
-                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-3">Information System Specialist | Tech Enthusiast</p>
+                <h1 className="text-[1.35rem] sm:text-2xl md:text-4xl font-bold mb-1 text-slate-900 dark:text-white whitespace-nowrap">Muhammad Riski Ardhea</h1>
+                <p className="text-sm md:text-xl text-slate-600 dark:text-slate-300 mb-3 flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                  <span>Information System Specialist</span>
+                  <span className="hidden md:inline">|</span>
+                  <span>Tech Enthusiast</span>
+                </p>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400 mb-0">
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> Lampung, Indonesia</span>
                   <span className="hidden md:inline">•</span>
                   <a href="mailto:riskiardhea09@gmail.com" className="hover:text-brand-neon transition-colors">riskiardhea09@gmail.com</a>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-3 relative z-10">
-                <a href="/CV.pdf" download className="px-6 py-2.5 rounded-full border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors shadow-sm text-sm md:text-base flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-3 relative z-10 w-full lg:w-auto">
+                <a href="/CV.pdf" download className="w-full sm:w-auto justify-center px-6 py-2.5 rounded-full border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium transition-colors shadow-sm text-sm md:text-base flex items-center gap-2">
                   <Download className="w-4 h-4" /> Download CV
                 </a>
-                <a href="#about" className="px-8 py-2.5 rounded-full bg-brand-light hover:bg-brand-neon text-white font-medium transition-colors shadow-md text-sm md:text-base">
+                <a href="#about" className="w-full sm:w-auto text-center justify-center px-8 py-2.5 rounded-full bg-brand-light hover:bg-brand-neon text-white font-medium transition-colors shadow-md text-sm md:text-base">
                   Lihat profil
                 </a>
               </div>
@@ -281,7 +285,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-glow">Profil Saya</h2>
+          <h2 className="text-xl md:text-4xl font-bold mb-6 text-glow">Profil Saya</h2>
           <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg">
             <p className="mb-4">
               Selamat datang! Saya adalah seorang lulusan Sistem Informasi yang antusias mengeksplorasi dunia teknologi. Saya memiliki minat besar dalam merancang sistem yang skalabel, mengembangkan aplikasi, dan menciptakan solusi teknologi yang berpusat pada pengalaman pengguna.
@@ -318,7 +322,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-glow">Teknologi & Keahlian</h2>
+          <h2 className="text-xl md:text-4xl font-bold mb-6 text-glow">Teknologi & Keahlian</h2>
           <p className="text-slate-600 dark:text-slate-400 mb-6">Klik pada teknologi untuk melihat detail penguasaan saya.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {skills.map((skill) => (
@@ -364,7 +368,7 @@ const EducationAndInternship = () => {
 
   return (
     <section id="education" className="py-24 px-6 md:px-12 max-w-4xl mx-auto relative">
-      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-glow">Riwayat Pendidikan</h2>
+      <h2 className="text-xl md:text-4xl font-bold mb-16 text-left md:text-center text-glow">Riwayat Pendidikan</h2>
       <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-6 md:ml-12 mb-20">
         {education.map((item, i) => (
           <motion.div
@@ -375,22 +379,22 @@ const EducationAndInternship = () => {
             className="mb-12 pl-10 md:pl-12 relative"
           >
             {/* Timeline Node Logo */}
-            <div className="absolute w-14 h-14 rounded-full bg-white dark:bg-slate-900 -left-[29px] top-0 border-4 border-surface-light dark:border-surface-dark flex items-center justify-center shadow-lg overflow-hidden z-10">
-              <img src={item.logo} alt="Logo Kampus" className="w-13 h-auto object-cover" />
+            <div className="absolute w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 -left-[25px] md:-left-[29px] top-0 border-4 border-surface-light dark:border-surface-dark flex items-center justify-center shadow-lg overflow-hidden z-10">
+              <img src={item.logo} alt="Logo Kampus" className="w-10 md:w-13 h-auto object-cover" />
             </div>
 
-            <div className="glass-card p-6 md:p-8 ml-2 bg-white/60 dark:bg-slate-900/40 hover:border-brand-neon/50 transition-colors">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-neon/10 text-brand-light dark:text-brand-neon text-xs md:text-sm font-bold mb-4 border border-brand-neon/20">{item.year}</span>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white">{item.company}</h3>
-              <h4 className="text-lg md:text-xl font-semibold text-brand-light dark:text-brand-dark mb-1">{item.role}</h4>
-              <h5 className="text-md text-slate-500 dark:text-slate-400 mb-4">{item.faculty}</h5>
+            <div className="glass-card p-5 md:p-8 ml-0 md:ml-2 bg-white/60 dark:bg-slate-900/40 hover:border-brand-neon/50 transition-colors">
+              <span className="inline-block px-3 py-1.5 rounded-full bg-brand-neon/10 text-brand-light dark:text-brand-neon text-xs md:text-sm font-bold mb-4 border border-brand-neon/20">{item.year}</span>
+              <h3 className="text-xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white">{item.company}</h3>
+              <h4 className="text-base md:text-xl font-semibold text-brand-light dark:text-brand-dark mb-1">{item.role}</h4>
+              <h5 className="text-sm md:text-base text-slate-500 dark:text-slate-400 mb-4">{item.faculty}</h5>
               <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">{item.desc}</p>
             </div>
           </motion.div>
         ))}
       </div>
 
-      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-glow mt-16">Riwayat Internship</h2>
+      <h2 className="text-xl md:text-4xl font-bold mb-16 text-left md:text-center text-glow mt-16">Riwayat Internship</h2>
       <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-6 md:ml-12">
         {internships.map((item, i) => (
           <motion.div
@@ -400,14 +404,14 @@ const EducationAndInternship = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="mb-12 pl-10 md:pl-12 relative"
           >
-            <div className="absolute w-14 h-14 rounded-full bg-white dark:bg-slate-900 -left-[29px] top-0 border-4 border-surface-light dark:border-surface-dark flex items-center justify-center shadow-lg overflow-hidden z-10 p-1">
+            <div className="absolute w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 -left-[25px] md:-left-[29px] top-0 border-4 border-surface-light dark:border-surface-dark flex items-center justify-center shadow-lg overflow-hidden z-10 p-1">
               <img src={item.logo} alt="Logo Perusahaan" className="w-full h-full object-contain rounded-full" />
             </div>
 
-            <div className="glass-card p-6 md:p-8 ml-2 bg-white/60 dark:bg-slate-900/40 hover:border-brand-neon/50 transition-colors">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-neon/10 text-brand-light dark:text-brand-neon text-xs md:text-sm font-bold mb-4 border border-brand-neon/20">{item.year}</span>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white">{item.company}</h3>
-              <h4 className="text-lg md:text-xl font-semibold text-brand-light dark:text-brand-dark mb-4">{item.role}</h4>
+            <div className="glass-card p-5 md:p-8 ml-0 md:ml-2 bg-white/60 dark:bg-slate-900/40 hover:border-brand-neon/50 transition-colors">
+              <span className="inline-block px-3 py-1.5 rounded-full bg-brand-neon/10 text-brand-light dark:text-brand-neon text-xs md:text-sm font-bold mb-4 border border-brand-neon/20">{item.year}</span>
+              <h3 className="text-xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white">{item.company}</h3>
+              <h4 className="text-base md:text-xl font-semibold text-brand-light dark:text-brand-dark mb-4">{item.role}</h4>
               <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed mb-6">{item.desc}</p>
 
               {item.assets && (
@@ -530,7 +534,7 @@ const Portfolio = () => {
 
   return (
     <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-glow">Proyek Portofolio</h2>
+      <h2 className="text-xl md:text-4xl font-bold mb-16 text-left md:text-center text-glow">Proyek Portofolio</h2>
 
       {isLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
@@ -560,7 +564,7 @@ const Portfolio = () => {
 
       {/* Certifications */}
       <div>
-        <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center text-glow">Sertifikasi</h3>
+        <h3 className="text-xl md:text-4xl font-bold mb-10 text-left md:text-center text-glow">Sertifikasi</h3>
         <p className="text-center text-slate-600 dark:text-slate-400 mb-10 -mt-6">Klik gambar sertifikat untuk memperbesar.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {certifications.map((cert, i) => (

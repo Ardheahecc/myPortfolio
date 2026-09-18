@@ -220,7 +220,7 @@ const Hero = () => {
         >
           {/* Banner */}
           <div className="h-40 md:h-56 relative overflow-hidden bg-slate-200 dark:bg-slate-800">
-            <img src="/fotoSampul.png" alt="Sampul" className="w-full h-full object-cover object-[75%_center] md:object-center" />
+            <img src="/fotoSampul.webp" alt="Sampul" className="w-full h-full object-cover object-[75%_center] md:object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
@@ -230,7 +230,7 @@ const Hero = () => {
               <div className="relative mb-4 md:mb-0">
                 {/* Avatar */}
                 <div className="w-36 h-36 md:w-48 md:h-48 rounded-full border-4 md:border-8 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center shadow-xl overflow-hidden relative z-10">
-                  <img src="/fotoProfil.png" alt="Muhammad Riski Ardhea" className="w-full h-full object-cover" />
+                  <img src="/fotoProfil.webp" alt="Muhammad Riski Ardhea" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
